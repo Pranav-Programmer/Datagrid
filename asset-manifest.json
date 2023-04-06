@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Datagrid/static/css/main.073c9b0a.css",
+    "main.js": "/Datagrid/static/js/main.7f4ac26a.js",
+    "static/js/787.944b9cdb.chunk.js": "/Datagrid/static/js/787.944b9cdb.chunk.js",
+    "index.html": "/Datagrid/index.html",
+    "main.073c9b0a.css.map": "/Datagrid/static/css/main.073c9b0a.css.map",
+    "main.7f4ac26a.js.map": "/Datagrid/static/js/main.7f4ac26a.js.map",
+    "787.944b9cdb.chunk.js.map": "/Datagrid/static/js/787.944b9cdb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.7f4ac26a.js"
+  ]
+}

@@ -1,24 +1,35 @@
 import { useState, useEffect } from "react";
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { purple } from '@mui/material/colors';
 import Stack from '@mui/material/Stack';
+import { makeStyles } from '@material-ui/core/styles';
+import Data from './Data'
+
+const useStyles = makeStyles((theme) => ({
+  App:{
+    backgroundColor:'rgb(133, 161, 158)', 
+    borderRadius:'1rem', margin:'1rem auto',
+    width:'51%', minWidth:'50rem', 
+    boxShadow:'0 0 0.5rem 0.2rem rgba(0.4, 0.4, 0.4, 0.4)'
+  },
+  textInput:{
+    fontSize:'1.1rem'
+  },
+
+}));
 
 
 const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(purple[500]),
-    '&:hover': {
-      backgroundColor: purple[700],
-    },
   }));
 
-const Datagrid = () => {
+function Datagrid() {
+  const classes = useStyles();
   const [data, setData] = useState(() => {
     const storedData = localStorage.getItem("datagrid_data");
     return storedData ? JSON.parse(storedData) : [
-      { id: 1, name: "Sudheer", dob: "13-05-1989", occupation: "Engineer" },
-      { id: 2, name: "Ajay", dob: "12-04-1994", occupation: "Manager" },
-      { id: 3, name: "Puja", dob: "12-12-1996", occupation: "Architect" }
+        Data.map(({id,name,dob,occupation}) => (
+          <Data key={id} name={name} dob={dob} occupation={occupation}/>
+      ))
     ];
   });
   const [editIndex, setEditIndex] = useState(-1);
@@ -53,7 +64,7 @@ const Datagrid = () => {
   };
 
   return (
-    <div style={{backgroundColor:'rgb(133, 161, 158)', borderRadius:'1rem', margin:'1rem auto', width:'51%', minWidth:'50rem', boxShadow:'0 0 0.5rem 0.2rem rgba(0.4, 0.4, 0.4, 0.4)'}}>
+    <div className={classes.App}>
       <h2>Table:</h2>
       <table>
         <thead>
@@ -68,30 +79,30 @@ const Datagrid = () => {
           <tr>
             <td>
               <input
+                className={classes.textInput}
                 type="text"
                 value={newData.name}
                 onChange={(e) => setNewData({ ...newData, name: e.target.value })}
-                style={{fontSize:'1.1rem'}}
               />
             </td>
             <td>
               <input
+                className={classes.textInput}
                 type="date"
                 value={newData.dob}
                 onChange={(e) => setNewData({ ...newData, dob: e.target.value })}
-                style={{fontSize:'1.1rem'}}
               />
             </td>
             <td>
               <input
+                className={classes.textInput}
                 type="tex"
                 value={newData.occupation}
                 onChange={(e) => setNewData({ ...newData, occupation: e.target.value })}
-                style={{fontSize:'1.1rem'}}
               />
             </td>
             <td>
-              <ColorButton onClick={handleAdd} variant="contained" style={{flex: 1, backgroundColor:'blue' }}>Save</ColorButton>
+              <ColorButton onClick={handleAdd} variant="contained" sx={{flex: 1, backgroundColor:'blue' }}>Save</ColorButton>
             </td>
           </tr>
           {data.map((row, index) => (
@@ -103,16 +114,16 @@ const Datagrid = () => {
     {editIndex === index ? (
        <>
         
-       <Stack spacing={2} direction="row" style={{display:'flex', margin:'1rem'}}>
-           <ColorButton onClick={() => handleSave(index)} variant="contained" style={{flex: 1, backgroundColor:'blue' }}>Save</ColorButton>
-           <ColorButton onClick={() => {setEditIndex(-1); window.location.reload(false);}} variant="contained" style={{flex: 1, backgroundColor:'red' }}>Cancel</ColorButton>
+       <Stack spacing={2} direction="row" sx={{display:'flex', margin:'1rem'}}>
+           <ColorButton onClick={() => handleSave(index)} variant="contained" sx={{flex: 1, backgroundColor:'blue' }}>Save</ColorButton>
+           <ColorButton onClick={() => {setEditIndex(-1); window.location.reload(false);}} variant="contained" sx={{flex: 1, backgroundColor:'red' }}>Cancel</ColorButton>
        </Stack>
    </>
    ) : (
    <>
-     <Stack spacing={2} direction="row" style={{display:'flex', margin:'1rem'}}>
-           <ColorButton onClick={() => handleEdit(index)} variant="contained" style={{flex: 1, backgroundColor:'blue' }}>Edit</ColorButton>
-           <ColorButton onClick={() => handleDelete(index)} variant="contained" style={{flex: 1, backgroundColor:'red' }}>Delete</ColorButton>
+     <Stack spacing={2} direction="row" sx={{display:'flex', margin:'1rem'}}>
+           <ColorButton onClick={() => handleEdit(index)} variant="contained" sx={{flex: 1, backgroundColor:'blue' }}>Edit</ColorButton>
+           <ColorButton onClick={() => handleDelete(index)} variant="contained" sx={{flex: 1, backgroundColor:'red' }}>Delete</ColorButton>
     </Stack>
    </>
         )}

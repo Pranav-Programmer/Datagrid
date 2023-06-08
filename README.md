@@ -1,74 +1,67 @@
-# Datagrid
+# React Data Grid Component
+
+The React Data Grid component provides a customizable data grid with editing, adding, and deleting functionality. It allows users to display and manipulate tabular data in a web application.
+## Component Features
+
+- Display data in a table format with customizable columns.
+- Edit existing data by clicking on the "Edit" button.
+- Add new rows to the grid with the ability to enter data.
+- Delete rows from the grid with the click of a button.
+- Save changes made to the data in real-time.
+- Responsive design for optimal viewing on different devices.
+
+
+## Installation
+To use the React Data Grid component in your React.js web application, follow these steps:
+
+1. Install the required dependencies by running the following command:
+
+```bash
+  npm install @mui/material react react-dom react-datepicker
+```
+
+2. Copy the 'Datagrid.js' file into your project's components directory.
+
+3. Import and use the 'Datagrid' component in your application. For example:
+
+```bash
+  import Datagrid from './components/Datagrid';
+
+function App() {
+  return (
+    <div>
+      <h1>My React App</h1>
+      <Datagrid />
+    </div>
+  );
+}
+```
+
+4. Customize the component according to your needs by modifying the styling, column names, or data source.
+## Usage
+
+The React Data Grid component provides the following functionalities:
+
+* Displaying existing data: The component takes an array of objects as input, where each object represents a row in the grid. The properties of each object correspond to the column names.
+
+* Editing data: Clicking the "Edit" button allows you to modify the data in a row. The changes are saved when the "Save" button is clicked.
+
+* Adding data: Use the input fields at the bottom of the grid to add new rows. Click the "Save" button to append the new data to the grid.
+
+* Deleting data: Click the "Delete" button to remove a row from the grid.
+
+Make sure to handle the storage of data in your application. The component utilizes local storage to persist the changes made to the data.
+
 ![image](https://user-images.githubusercontent.com/79044490/230316370-d38c3dd4-180c-4d47-a9da-2df77624ffc7.png)
 ![image](https://user-images.githubusercontent.com/79044490/230316457-8ee2a406-3745-4b0f-9475-c820de32b49d.png)
 
-# Getting Started with Create React App
+## Customization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Contributions to the React Data Grid component are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
 
-## Available Scripts
 
-In the project directory, you can run:
+## 🚀 Credits
 
-### `npm start`
+The React Data Grid component was created by Pranav Dharme.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy coding!
